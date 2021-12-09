@@ -31,3 +31,17 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('.woocommerce-form > .button').click()
 });
 
+Cypress.Commands.add('CadProdutos', (quantidade) => {
+    cy.get('[class="product-block grid"]')
+            .first()
+            .click()
+    cy.get('.button-variable-item-S')
+            .click()
+    cy.get('.button-variable-item-Orange')
+            .click()
+    cy.get('.input-text')
+            .clear()
+            .type(quantidade)
+    cy.get('.single_add_to_cart_button')
+            .click()
+})
